@@ -128,9 +128,9 @@ def main():
         if is_key_down(KEY_R):
             player.x = 400
             player.y = 200
+        
         if is_key_down(KEY_SPACE) and not jumped:
             controlled_jump += 1
-            print(str(y_momentum))
             if 1 <= controlled_jump <= 5:
                 y_momentum = -8
             elif 5 <= controlled_jump <= 10:
@@ -148,11 +148,12 @@ def main():
             if check_collision_recs((player.x + dx, player.y, player.width, player.height), tile):
                 dx = 0
             if check_collision_recs((player.x, player.y + y_momentum, player.width, player.height), tile):
-                y_momentum = 0
-                '''if y_momentum < 0:
-                    dy = 0
+                if y_momentum < 0:
+                    y_momentum = (tile.y + 20) - player.y
+                    y_momentum = 0
                 elif y_momentum >= 0:
-                    dy = 0'''
+                    y_momentum = tile.y - (player.y + 20)
+                    y_momentum = 0
                 jumped = False
                 controlled_jump = 0
 
