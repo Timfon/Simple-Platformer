@@ -11,11 +11,8 @@ class Player:
         self.controlled_jump = 0
         self.dy = 0
         self.dx = 0
-        
-
     #class methods have self.
     def move(self):
-
         self.y_momentum += 1
         if self.y_momentum > 10:
             self.y_momentum = 10

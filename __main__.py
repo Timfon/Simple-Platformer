@@ -39,14 +39,10 @@ def main():
         player.update_pos()
 
         
-
-
-
-
         #refactor levelswitch
-        '''if player.x > 800:
-            n += 1
-            player.x = 0'''
+        if player.player.x > 800:
+            levels.n += 1
+            player.player.x = 0
 
         draw_fps(400, 200)
         clear_background(RAYWHITE)
