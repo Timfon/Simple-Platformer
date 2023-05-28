@@ -1,13 +1,10 @@
 from pyray import *
-from Platformer import *
+from __main__ import *
 
 class Level:
-    
-    
     #associate anything?
     def __init__(self):
-        LEVELS = [level_1, level_2]
-        level_1 = [
+        self.level_1 = [
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -49,7 +46,7 @@ class Level:
                 [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
                 0, 0, 0]]
 
-        level_2 = [
+        self.level_2 = [
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                 0, 0, 0],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -90,13 +87,17 @@ class Level:
                 0, 0, 0],
                 [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
                 0, 0, 0]]
-
-    def initialize_levels():
+    
+        self.n = 0
+        
+    #call every frame?
+    def initialize_levels(self):
         #initializes levels
+        LEVELS = [self.level_1, self.level_2]
         tile_rects = []
-        if LEVELS[n]:
+        if LEVELS[self.n]:
             layer = 0
-            for row in LEVELS[n]:
+            for row in LEVELS[self.n]:
                 col = 0
                 for tile in row:
                     if tile == 1:
@@ -104,5 +105,5 @@ class Level:
                         tile_rects.append(tile)
                     col += 1
                 layer += 1
+        return tile_rects
 
-#level switch:
