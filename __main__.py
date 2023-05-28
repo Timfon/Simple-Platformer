@@ -36,6 +36,10 @@ def main():
                 player.jumped = False
                 player.controlled_jump = 0
 
+        player.update_pos()
+
+        
+
 
 
 

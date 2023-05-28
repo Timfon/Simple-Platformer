@@ -16,7 +16,7 @@ class Player:
     #class methods have self.
     def move(self):
 
-        self.y_momentum += 0
+        self.y_momentum += 1
         if self.y_momentum > 10:
             self.y_momentum = 10
         self.dy += self.y_momentum
@@ -42,11 +42,10 @@ class Player:
         elif is_key_up(KEY_SPACE):
             self.jumped = True
 
+    def update_pos(self):
         self.player.x += self.dx
         self.player.y += self.y_momentum
         self.dx = self.dx * 0.90
-
-
         draw_rectangle_rec(self.player, MAGENTA)
 
         
